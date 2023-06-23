@@ -45,6 +45,9 @@
     <Reference Include="DSharpPlus.Interactivity, Version=4.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DSharpPlus.Interactivity.4.4.2\lib\netstandard2.0\DSharpPlus.Interactivity.dll</HintPath>
     </Reference>
+    <Reference Include="DSharpPlus.Lavalink, Version=4.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DSharpPlus.Lavalink.4.4.2\lib\netstandard2.0\DSharpPlus.Lavalink.dll</HintPath>
+    </Reference>
     <Reference Include="DSharpPlus.SlashCommands, Version=4.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DSharpPlus.SlashCommands.4.4.2\lib\netstandard2.0\DSharpPlus.SlashCommands.dll</HintPath>
     </Reference>
@@ -152,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Basic.cs" />
+    <Compile Include="Commands\Music.cs" />
     <Compile Include="Config\ConfigJSON.cs" />
     <Compile Include="Config\JSONReader.cs" />
     <Compile Include="Program.cs" />

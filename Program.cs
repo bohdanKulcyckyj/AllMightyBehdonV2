@@ -5,6 +5,8 @@ using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
+using DSharpPlus.Lavalink;
+using DSharpPlus.Net;
 using System;
 using System.Threading.Tasks;
 
@@ -53,11 +55,29 @@ namespace DiscordBotTemplate
             Commands = Client.UseCommandsNext(commandsConfig);
 
             //7. Register your commands
-
             Commands.RegisterCommands<Basic>();
+            Commands.RegisterCommands<Music>();
+
+            //lavalink konfigurece
+            var endpoint = new ConnectionEndpoint
+            {
+                Hostname = "lavalink.devamop.in",
+                Port = 443,
+                Secured = true
+            };
+
+            var lavalinkConfig = new LavalinkConfiguration
+            {
+                Password = "DevamOP",
+                RestEndpoint = endpoint,
+                SocketEndpoint = endpoint
+            };
+
+            var lavalink = Client.UseLavalink();
 
             //8. Connect to get the Bot online
             await Client.ConnectAsync();
+            await lavalink.ConnectAsync(lavalinkConfig);
             await Task.Delay(-1);
         }
 
